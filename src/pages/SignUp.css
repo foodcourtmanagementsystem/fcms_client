@@ -1,0 +1,59 @@
+.sign-up 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sign-up__heading
+{
+    text-align: center;
+}
+
+.sign-up__form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sign-up__btn-container
+{
+    display: grid;
+    place-content: center;
+}
+
+.sign-up__btn
+{
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: green;
+    color: white; 
+}
+
+.sign-up__btn:disabled
+{
+    opacity: 0.5;
+}
+
+
+.sign-up__sign-in-link
+{
+    color: blue;
+    font-weight: 600;
+}
+
+
+.sign-up__sign-in-link:hover
+{
+    color: rgb(50, 50, 204);
+}
+
+@media screen and (min-width: 576px) 
+{
+    .sign-up 
+    {
+        padding: 0 100px;
+    }
+}

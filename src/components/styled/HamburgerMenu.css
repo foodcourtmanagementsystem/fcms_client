@@ -1,0 +1,22 @@
+.hamburger-menu 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+    padding: 6px;
+    transition: all 0.2s linear;
+    border-radius: 2px
+}
+
+.hamburger-menu:hover 
+{
+    background-color: rgb(224, 224, 224);
+}
+
+.hamburger-menu__line 
+{
+    width: 25px;
+    padding: 1px;
+    background-color: black;
+}

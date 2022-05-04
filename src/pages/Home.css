@@ -1,0 +1,49 @@
+.home 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.carousel-item__image 
+{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+
+.food-categories 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 576px) {
+    
+    .carousel-item__image
+    {
+        height: 300px;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) {
+    
+    .carousel-item__image
+    {
+        height: 400px;
+    }
+
+}

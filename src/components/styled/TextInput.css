@@ -1,0 +1,23 @@
+.text-input
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.text-input__label
+{
+    font-weight: bold;
+}
+
+.text-input__content
+{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.text-input__error 
+{
+    color: red;
+}

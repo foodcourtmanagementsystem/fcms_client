@@ -1,0 +1,45 @@
+.side-bar 
+{
+    width: 200px;
+    box-shadow: 1px 0  1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    height: calc(100vh - 44px);
+    position: sticky;
+    top: 44px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.side-bar::-webkit-scrollbar
+{
+    display: none;
+}
+
+.side-bar-item__title 
+{
+    font-weight: 600;
+}
+
+.side-bar-item
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.side-bar-item:hover 
+{
+    background-color: rgb(224, 224, 224);
+}
+
+.side-bar-item.active
+{
+    color: blue;
+}

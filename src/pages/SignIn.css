@@ -1,0 +1,114 @@
+.sign-in 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sign-in__heading
+{
+    text-align: center;
+}
+
+.sign-in__form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sign-in__password-container
+{
+    display: flex;
+    gap: 10px;
+}
+
+.sign-in__password-container .text-input 
+{
+    flex: 1;
+}
+
+.sign-in__password-container .icon 
+{
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+
+.sign-in__btn-container
+{
+    display: grid;
+    place-content: center;
+}
+
+.sign-in__btn
+{
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: green;
+    color: white; 
+    transition: all 0.2s linear;
+}
+
+.sign-in__btn:not(:disabled):hover
+{
+    background-color: rgb(10, 168, 10);
+}
+
+.sign-in__btn:disabled
+{
+    opacity: 0.5;
+}
+
+
+.sign-in__sign-up-link
+{
+    color: blue;
+    font-weight: 600;
+}
+
+
+.sign-in__sign-up-link:hover
+{
+    color: rgb(50, 50, 204);
+}
+
+.checkbox-input-group
+{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.checkbox-input
+{
+    cursor: pointer;    
+}
+
+
+.forgot-password-container
+{
+    align-self: flex-end;
+}
+
+.forgot-password
+{
+    color: blue;
+    font-weight: 600;
+    transition: all 0.2s linear;
+}
+
+.forgot-password:hover 
+{
+    color: rgb(18, 18, 172);
+}
+
+
+@media screen and (min-width: 576px) 
+{
+    .sign-in 
+    {
+        padding: 0 100px;
+    }
+}

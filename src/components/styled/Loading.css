@@ -1,0 +1,24 @@
+.loading-container 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading 
+{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border-width: 5px;
+    border-color: blue blue transparent blue;
+    border-style: solid;
+    animation: loaderspin 0.5s linear infinite forwards;
+}
+
+@keyframes loaderspin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

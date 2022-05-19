@@ -1,0 +1,20 @@
+.footer 
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__bottom-brand
+{
+    display: flex;
+    gap: 10px;
+}
+
+.footer__bottom 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}

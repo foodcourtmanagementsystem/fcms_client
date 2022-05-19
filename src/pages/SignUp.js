@@ -3,7 +3,13 @@ import './SignUp.css';
 import TextInput from '../components/styled/TextInput';
 import {NavLink} from 'react-router-dom';
 import * as regex from '../utils/regex';
-
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import {useSelector, useDispatch} from 'react-redux';
+import * as userActionTypes from '../actionTypes/user';
+import Loading from '../components/styled/Loading';
+import Error from '../components/styled/Error';
+import {useNavigate} from 'react-router-dom';
 
 function SignUp() {
 
@@ -18,8 +24,10 @@ function SignUp() {
   const [errors, setErrors] = useState({});
   const firstInputRef = useRef();
   const [isValid, setIsValid] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [serverMessages, setServerMessages] = useState({});
+  const [isVisible, setIsVisible] = useState(false);
+  const dispatch = useDispatch();
+  const signUp = useSelector(state => state.user.signUp);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const el = firstInputRef.current;
@@ -52,6 +60,14 @@ function SignUp() {
     setIsValid(isValid);
 
   }, [errors, values]);
+
+  useEffect(() => {
+    if(signUp.success)
+    {
+      navigate("/user/signin");
+    }
+
+  }, [signUp.success]);
 
 
   const handleChange = e => {
@@ -86,13 +102,22 @@ function SignUp() {
     }
     else if(name === 'password')
     {
-        if(value && value.length < 8 )
+        if(value && !regex.PASSWORD_REGEX.test(value))
         {
-          _errors.password = "The password length should be 8 or more than 8.";
+          _errors.password = "The password length should be 8 or more than 8 with at least one uppercase letter, one lower case letter, one digit and one special character.";
         }
         else 
         {
           delete _errors.password;
+        }
+
+        if(values.confirmPassword && value !== values.confirmPassword)
+        {
+            _errors.confirmPassword = "Password and Confirm Password should be same.";
+        }
+        else 
+        {
+            delete _errors.confirmPassword;
         }
     }
     else if(name === 'confirmPassword')
@@ -108,7 +133,6 @@ function SignUp() {
     }
 
 
-
     setValues(prevValues => ({
       ...prevValues,
       [name]: value
@@ -118,27 +142,44 @@ function SignUp() {
 
   }
 
+  const changeVisibility = e => {
+    setIsVisible(prevIsVisible => !prevIsVisible);
+  }
 
   const handleSubmit =  e => {
     e.preventDefault();
-
+    dispatch({
+      type: userActionTypes.SIGN_UP_USER_LOADING
+    });
+    dispatch({
+      type: userActionTypes.SIGN_UP_USER,
+      payload: {
+        name: values.name, 
+        email: values.email,
+        password: values.password
+      }
+    });
   }
 
   return (
     <div className="sign-up">
 
-      <h4 className='sign-up__heading'>Sign Up</h4>
+      <h5 className='sign-up__heading'>Sign Up</h5>
 
       <form onSubmit={handleSubmit} className="sign-up__form">
           <TextInput label="Name" name="name" value={values.name} onChange={handleChange} error={errors.name} ref={firstInputRef} placeholder="Enter your name" />
           <TextInput label="Email" name="email" value={values.email} onChange={handleChange} error={errors.email} placeholder="Enter your email" />
-          <TextInput label="Password" type="password" name="password" value={values.password} onChange={handleChange} error={errors.password} placeholder="Enter your password" />
-          <TextInput label="Confirm Password" type="password" name="confirmPassword" value={values.confirmPassword} onChange={handleChange} error={errors.confirmPassword} placeholder="Enter your password again" />
+          <div className="sign-up__password-container">
+            <TextInput label="Password" type={isVisible ? 'text' : 'password'} name="password" value={values.password} onChange={handleChange} error={errors.password} placeholder="Enter your password" />
+            {isVisible ? <VisibilityIcon className="icon" onClick={changeVisibility} /> : <VisibilityOffIcon className="icon" onClick={changeVisibility} /> }
+          </div>
+          <TextInput label="Confirm Password" type={isVisible ? 'text' : 'password'} name="confirmPassword" value={values.confirmPassword} onChange={handleChange} error={errors.confirmPassword} placeholder="Enter your password again" />
           <div className='sign-up__btn-container'>
-            <button className='sign-up__btn' disabled={!isValid}>Register</button>
+            <button className='sign-up__btn' disabled={!isValid || signUp.loading}>Register</button>
           </div>
       </form>
-     
+     {signUp.loading && <Loading />}
+     {signUp.error && <Error error={signUp.error} />}
       <div className='sign-up__bottom'>
         Already have an account? <NavLink to="/user/signin" className='sign-up__sign-in-link'>Sign In</NavLink>
       </div>

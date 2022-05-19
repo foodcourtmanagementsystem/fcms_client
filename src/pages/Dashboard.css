@@ -1,0 +1,13 @@
+.dashboard
+{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.section-group 
+{
+  display: flex;
+  flex: 1;
+}

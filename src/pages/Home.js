@@ -7,71 +7,38 @@ import image6 from '../img/image6.jpg';
 import image7 from '../img/image7.jpg';
 import FoodCategory from '../components/FoodCategory';
 import {Carousel} from 'bootstrap';
-
+import {useSelector, useDispatch} from 'react-redux';
+import * as foodCategoryActionTypes from '../actionTypes/foodCategory';
+import Loading from '../components/styled/Loading';
+import Error from '../components/styled/Error';
 
 
 function Home() {
-  
-  useEffect(() => {
+
+    const foodCategories = useSelector(state => state.foodCategory.data);
+    const dispatch = useDispatch();
+    const listFoodCategory = useSelector(state => state.foodCategory.list);
+    
+    useEffect(() => {
  
-    const carousel = document.querySelector('[data-bs-ride="carousel"]');
-    if(carousel)
+      const carousel = document.querySelector('[data-bs-ride="carousel"]');
+      if(carousel)
         Carousel.carouselInterface(carousel, Carousel.getInstance(carousel));
 
-  }, []);
+    }, []);
 
-  
+    useEffect(() => {
+      if(Object.keys(listFoodCategory).length === 0)
+      {
+        dispatch({
+          type: foodCategoryActionTypes.LIST_FOOD_CATEGORY_LOADING
+        });
+        dispatch({
+          type: foodCategoryActionTypes.LIST_FOOD_CATEGORY
+        });
+      }
 
-  const foodCategories = [
-    {
-      Id: 1,
-      Title: "Veg",
-      Image: image1,
-      CreatedAt: new Date(),
-    },
-    {
-      Id: 2,
-      Title: "Non-veg",
-      Image: image2,
-      CreatedAt: new Date()
-    },
-    {
-      Id: 3,
-      Title: "Drinks",
-      Image: image6,
-      CreatedAt: new Date()
-    },
-    {
-      Id: 4,
-      Title: "Deserts",
-      Image: image7,
-      CreatedAt: new Date()
-    },
-    {
-      Id: 1,
-      Title: "Veg",
-      Image: image1,
-      CreatedAt: new Date(),
-    },
-    {
-      Id: 2,
-      Title: "Non-veg",
-      Image: image2,
-      CreatedAt: new Date()
-    },
-    {
-      Id: 3,
-      Title: "Drinks",
-      Image: image6,
-      CreatedAt: new Date()
-    },
-    {
-      Id: 4,
-      Title: "Deserts",
-      Image: image7,
-      CreatedAt: new Date()
-    }
-  ];
+    }, [listFoodCategory]);
 
   return (
     <div className='home'>
@@ -111,7 +78,8 @@ function Home() {
             <span className='visually-hidden'>Next</span>
           </button>
         </div>
-
+        {listFoodCategory.loading && <Loading />}
+        {listFoodCategory.error && <Error error={listFoodCategory.error} />}
         <div className='food-categories'>
           {foodCategories.map((foodCategory, index) => (<FoodCategory key={index} item={foodCategory}  />))}
         </div>

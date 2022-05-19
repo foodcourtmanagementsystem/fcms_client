@@ -1,0 +1,53 @@
+.header 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10000;
+    gap: 10px;
+}
+
+.header__left 
+{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.header__center 
+{
+    flex: 0.6;
+}
+
+
+.header__right 
+{
+    display: flex;
+    gap: 10px;
+}
+
+
+.header__right-btn
+{
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: all 0.2s linear;
+    font-size: 14px;
+}
+
+.header__right-btn:hover 
+{
+    background-color: rgb(5, 5, 155);
+    color: white;
+}
+
+

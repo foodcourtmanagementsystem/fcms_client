@@ -1,0 +1,23 @@
+.number-input
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.number-input__label
+{
+    font-weight: 600;
+}
+
+.number-input__content
+{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.number-input__error 
+{
+    color: red;
+}

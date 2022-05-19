@@ -1,0 +1,7 @@
+.food-category-page__food-items
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}

@@ -8,12 +8,18 @@ import Cart from '../pages/Cart';
 import OrderAndHistory from '../pages/OrderAndHistory';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
-import SalesReport from '../pages/SalesReport';
+import ConfirmEmail from '../pages/ConfirmEmail';
 import NotFound from '../pages/NotFound';
 import FoodCategory from '../pages/FoodCategory';
-
+import ResetPassword from '../pages/ResetPassword';
+import ConfirmResetPassword from '../pages/ConfirmResetPassword';
+import Profile from '../pages/Profile';
+import Settings from '../pages/Settings';
+import {useSelector} from 'react-redux';
 
 function Content() {
+
+    const user = useSelector(state => state.user.data);
 
     const routes = [
         {
@@ -49,8 +55,24 @@ function Content() {
             Component: SignUp
         },
         {
-            path: "/salesreport",
-            Component: SalesReport
+            path: "/user/confirmemail/:userId",
+            Component: ConfirmEmail
+        },
+        {
+            path: "/user/resetpassword",
+            Component: ResetPassword
+        },
+        {
+            path: "/user/confirmresetpassword/:userId",
+            Component: ConfirmResetPassword
+        },
+        {
+            path: "/user/profile",
+            Component: Profile
+        },
+        {
+            path: "/user/settings",
+            Component: Settings
         },
         {
             path: "*",

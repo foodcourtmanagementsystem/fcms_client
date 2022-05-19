@@ -1,0 +1,31 @@
+
+
+.food-item__cart-btn
+{
+    padding: 3px 10px;
+    border-radius: 3px;
+    background-color: rgb(15, 15, 184);
+    color: white;
+    transition: all 0.2s linear;
+}
+
+
+.food-item__cart-btn:hover
+{
+    background-color: blue;
+}
+
+.food-item__cart-btn--added-to-cart
+{
+    background-color: rgb(223, 145, 0);
+}
+
+.food-item__cart-btn--added-to-cart:hover
+{
+    background-color: orange;
+}
+
+.food-item__cart-btn:disabled
+{
+    opacity: 0.3;
+}

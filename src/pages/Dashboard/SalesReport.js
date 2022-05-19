@@ -1,4 +1,4 @@
-
+import './SalesReport.css';
 
 function SalesReport() {
   return (

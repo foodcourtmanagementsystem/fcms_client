@@ -1,0 +1,23 @@
+.select-input
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.select-input__label
+{
+    font-weight: 600;
+}
+
+.select-input__content
+{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.select-input__error 
+{
+    color: red;
+}

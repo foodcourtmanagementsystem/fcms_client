@@ -1,0 +1,23 @@
+.text-area
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.text-area__label
+{
+    font-weight: 600;
+}
+
+.text-area__content
+{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+}
+
+.text-area__error 
+{
+    color: red;
+}

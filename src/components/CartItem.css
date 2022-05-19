@@ -1,0 +1,84 @@
+.cart-item 
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.cart-item * 
+{
+    flex: 1;
+    text-align: center;
+}
+
+.cart-item__img-no-contanier
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    flex: 0.5;
+}
+
+.cart-item__img
+{
+    width: 50px;
+    height: 50px;
+}
+
+.cart-item__title
+{
+    font-weight: 400;
+} 
+
+.cart-item__price
+{
+    font-weight: 400;
+}
+
+.cart-item__food-category 
+{
+    font-weight: 400;
+}
+
+.cart-item__quantity
+{
+    width: 100px;
+}
+
+.cart-item__action
+{
+    background-color: rgb(229, 9, 9);
+    color: white;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.cart-item__action:disabled
+{
+    opacity: 0.4;
+}
+
+.cart-item__action:hover 
+{
+    background-color: red;
+}
+
+.cart-item__quantity-contanier
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.card-item__stock
+{
+    font-size: 14px;
+}

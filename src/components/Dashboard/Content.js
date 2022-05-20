@@ -5,7 +5,6 @@ import Home from '../../pages/Dashboard/Home';
 import FoodCategory from '../../pages/Dashboard/FoodCategory';
 import FoodItem from '../../pages/Dashboard/FoodItem';
 import Order from '../../pages/Dashboard/Order';
-import Payment from '../../pages/Dashboard/Payment';
 import SalesReport from '../../pages/Dashboard/SalesReport';
 import Profile from '../../pages/Profile';
 import Settings from '../../pages/Settings';
@@ -29,10 +28,6 @@ function Content() {
         {
             path: "orders",
             Component: Order
-        },
-        {
-            path: "payments",
-            Component: Payment
         },
         {
             path: "salesreport",

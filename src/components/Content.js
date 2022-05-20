@@ -16,6 +16,7 @@ import ConfirmResetPassword from '../pages/ConfirmResetPassword';
 import Profile from '../pages/Profile';
 import Settings from '../pages/Settings';
 import {useSelector} from 'react-redux';
+import Search from '../pages/Search';
 
 function Content() {
 
@@ -45,6 +46,10 @@ function Content() {
         {
             path: "/orderandhistory",
             Component: OrderAndHistory
+        },
+        {
+            path: "/search",
+            Component: Search
         },
         {
             path: "/user/signin",

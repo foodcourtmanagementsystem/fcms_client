@@ -5,7 +5,9 @@ import fileReducer from './file';
 import foodItemReducer from './foodItem';
 import cartItemReducer from './cartItem';
 import userAddressReducer from './userAddress';
-
+import paymentReducer from './payment';
+import orderItemReducer from './orderItem';
+import searchReducer from './search';
 
 const rootReducer = combineReducers({
     foodCategory: foodCategoryReducer,
@@ -13,7 +15,10 @@ const rootReducer = combineReducers({
     file: fileReducer,
     foodItem: foodItemReducer,
     cartItem: cartItemReducer,
-    userAddress: userAddressReducer
+    userAddress: userAddressReducer,
+    payment: paymentReducer,
+    orderItem: orderItemReducer,
+    search: searchReducer
 });
 
 export default rootReducer;

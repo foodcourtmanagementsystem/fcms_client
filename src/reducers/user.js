@@ -278,6 +278,33 @@ function reducer(state=initialState, action)
                 ...state, 
                 updateUserFullName: initialState.updateUserFullName
             });
+
+        case actionTypes.CHANGE_PASSWORD_USER_LOADING:
+            return ({
+                ...state, 
+                changePassword: {
+                    loading: true
+                }
+            });
+        case actionTypes.CHANGE_PASSWORD_USER_SUCCESS:
+            return ({
+                ...state, 
+                changePassword: {
+                    success: true
+                }
+            });
+        case actionTypes.CHANGE_PASSWORD_USER_ERROR:
+            return ({
+                ...state, 
+                changePassword: {
+                    error: action.payload
+                }
+            });
+        case actionTypes.CHANGE_PASSWORD_USER_INITIAL_STATE:
+            return ({
+                ...state, 
+                changePassword: initialState.changePassword
+            });
         
         default:
             return state;

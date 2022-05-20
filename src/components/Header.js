@@ -81,8 +81,8 @@ function Header() {
           </div>
         : 
         <>        
-          <NavLink to="/user/signin" className='header__right-btn'>Sign In</NavLink>
-          <NavLink to="/user/signup" className='header__right-btn'>Sign Up</NavLink>
+          <NavLink to="/user/signin" className='header__right-btn header__right-btn--sign'>Sign In</NavLink>
+          <NavLink to="/user/signup" className='header__right-btn header__right-btn--sign'>Sign Up</NavLink>
         </>
         
         }

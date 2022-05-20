@@ -1,0 +1,15 @@
+.payment 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 10px;
+}
+
+.payment__left 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

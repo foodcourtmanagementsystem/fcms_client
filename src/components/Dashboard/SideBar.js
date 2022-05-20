@@ -4,8 +4,6 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import BookOnlineIcon from '@mui/icons-material/BookOnline';
-import PaymentsIcon from '@mui/icons-material/Payments';
-import PeopleIcon from '@mui/icons-material/People';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
@@ -47,21 +45,11 @@ function SideBar() {
       title: "Orders",
       Icon: BookOnlineIcon
     },
-    {
-      to: "payments",
-      title: "Payments",
-      Icon: PaymentsIcon
-    },
-    {
-      to: "users",
-      title: "Users",
-      Icon: PeopleIcon
-    },
-    {
+   /* {
       to: "salesreport",
       title: "Sales Report",
       Icon: AnalyticsIcon
-    },
+    },*/
     {
       to: "profile",
       title: "Profile",

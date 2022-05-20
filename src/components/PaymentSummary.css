@@ -1,0 +1,15 @@
+.payment-summary
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2),
+                0 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 3px;
+}
+
+.payment-summary__info
+{
+    font-weight: 600;
+}

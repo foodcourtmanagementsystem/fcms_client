@@ -28,6 +28,7 @@ const SideBarItem = ({item}) => {
 function SideBar() {
 
   const user = useSelector(state => state.user.data);
+  const cartItems = useSelector(state => state.cartItem.data);
 
   const navItems = [];
   if(user.isAuthenticated && user.roles.includes('Admin'))
@@ -53,12 +54,16 @@ function SideBar() {
 
   if(user.isAuthenticated)
   {
-    navItems.push( {
-      to: "/payment",
-      title: "Payment",
-      Icon: PaymentIcon
-    },
+    if(cartItems.length > 0)
     {
+      navItems.push({
+        to: "/payment",
+        title: "Payment",
+        Icon: PaymentIcon
+      });
+    }
+
+    navItems.push({
       to: "/orderandhistory",
       title: "Order & History",
       Icon: HistoryIcon

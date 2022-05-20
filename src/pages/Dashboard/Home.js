@@ -37,21 +37,11 @@ function Home() {
       title: "Orders",
       Icon: BookOnlineIcon
     },
-    {
-      to: "payments",
-      title: "Payments",
-      Icon: PaymentsIcon
-    },
-    {
-      to: "users",
-      title: "Users",
-      Icon: PeopleIcon
-    },
-    {
+    /*{
       to: "salesreport",
       title: "Sales Report",
       Icon: AnalyticsIcon
-    },
+    },*/
     {
       to: "profile",
       title: "Profile",

@@ -5,6 +5,9 @@ import * as fileSagas from './file';
 import * as foodItemSagas from './foodItem';
 import * as cartItemSagas from './cartItem';
 import * as userAddressSagas from './userAddress';
+import * as paymentSagas from './payment';
+import * as orderItemSagas from './orderItem';
+import * as searchSagas from './search';
 
 function* rootSaga()
 {
@@ -15,6 +18,9 @@ function* rootSaga()
         ...Object.values(foodItemSagas).map(fork),
         ...Object.values(cartItemSagas).map(fork),
         ...Object.values(userAddressSagas).map(fork),
+        ...Object.values(paymentSagas).map(fork),
+        ...Object.values(orderItemSagas).map(fork),
+        ...Object.values(searchSagas).map(fork)
     ]);
 }
 

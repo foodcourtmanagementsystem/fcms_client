@@ -13,6 +13,7 @@ function App() {
   const user = useSelector(state => state.user.data);
   const dispatch = useDispatch();
   const listCartItem = useSelector(state => state.cartItem.list);
+  const makePayment = useSelector(state => state.payment.make);
 
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
   }, [user.isAuthenticated]);
 
   useEffect(() => {
-    if(!listCartItem.success) 
+    if(!listCartItem.success || makePayment.success) 
     {
       dispatch({
         type: cartItemActionTypes.LIST_CART_ITEM_LOADING
@@ -37,7 +38,7 @@ function App() {
         });
     }
     
-  }, [listCartItem.success])
+  }, [listCartItem.success, makePayment.success])
 
   if(user.isAuthenticated === null)
   {

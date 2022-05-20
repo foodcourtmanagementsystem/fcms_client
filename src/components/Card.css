@@ -1,0 +1,59 @@
+.card 
+{
+    min-width: 200px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2),
+                0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.check-out__form 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+.check-out__form-input-group
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-element__wrapper
+{
+    border-bottom: 2px solid orange;
+    flex: 1;
+}
+
+.card-element__label
+{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.check-out__form-btn-container
+{
+    text-align: center;
+}
+
+.check-out__form-btn
+{
+    padding: 5px 20px;
+    background-color: rgb(245, 51, 158);
+    color: white;
+    border-radius: 3px;
+    font-weight: 600;
+    transition: all 0.2s linear;
+}
+
+.check-out__form-btn:hover 
+{
+    background-color:rgb(235, 59, 197);
+}
+
+.check-out__form-btn:disabled 
+{
+    opacity: 0.3;
+}
+

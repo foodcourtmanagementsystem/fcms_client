@@ -10,7 +10,8 @@ const initialState = {
     signOut: {},
     resetPassword: {},
     confirmResetPassword: {},
-    updateUserFullName: {}
+    updateUserFullName: {},
+    changePassword: {}
 };
 
 export default initialState;

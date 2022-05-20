@@ -272,3 +272,32 @@ export function* watchUpdateUserFullName()
 {
     yield takeLatest(actionTypes.UPDATE_USER_FULL_NAME, workUpdateUserFullName);
 }
+
+async function changePasswordUser(payload)
+{
+    const URL  = "/api/Account/ChangePassword";
+    await axios.post(URL, payload);        
+}
+
+function* workChangePasswordUser(action)
+{
+    try
+    {
+        yield call(changePasswordUser, action.payload);
+        yield put({
+            type: actionTypes.CHANGE_PASSWORD_USER_SUCCESS
+        });
+    }
+    catch(err)
+    {
+        yield put({
+            type: actionTypes.CHANGE_PASSWORD_USER_ERROR,
+            payload: err.message
+        });
+    }
+}
+
+export function* watchChangePasswordUser()
+{
+    yield takeLatest(actionTypes.CHANGE_PASSWORD_USER, workChangePasswordUser);
+}

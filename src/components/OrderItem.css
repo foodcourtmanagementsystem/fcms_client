@@ -1,0 +1,103 @@
+.order-item
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.order-item__header 
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.order-item * 
+{
+    flex: 1;
+    text-align: center;
+}
+
+.order-item__img-no-contanier
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+    flex: 0.5;
+}
+
+.order-item__img
+{
+    width: 50px;
+    height: 50px;
+}
+
+.order-item__title
+{
+    font-weight: 400;
+} 
+
+.order-item__price
+{
+    font-weight: 400;
+}
+
+.order-item__food-category 
+{
+    font-weight: 400;
+}
+
+.order-item__quantity
+{
+    width: 100px;
+}
+
+.order-item__action
+{
+    background-color: rgb(229, 9, 9);
+    color: white;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.order-item__action:disabled
+{
+    opacity: 0.4;
+}
+
+.order-item__action:hover 
+{
+    background-color: red;
+}
+
+.order-item__quantity-contanier
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.card-item__stock
+{
+    font-size: 14px;
+}
+
+.order-item-user
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    background-color: white;
+}

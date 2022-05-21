@@ -75,7 +75,7 @@ function FoodItem() {
             Description : {foodItem.description}
           </div>
         </div>
-      </> }
+      </>}
       </div>
     </div>
   );

@@ -135,6 +135,10 @@ function Profile() {
       {
         _errors.phoneNumber = "Enter a valid phone number.";
       }
+      else if(parseInt(value.toString()[0]) < 6)
+      {
+        _errors.phoneNumber = "Enter a valid phone number.";
+      } 
       else
       {
         delete _errors.phoneNumber;
@@ -149,6 +153,39 @@ function Profile() {
       else
       {
         delete _errors.pinCode;
+      }
+    }
+    else if(name === 'city')
+    {
+      if(!regex.NAME_REGEX.test(value))
+      {
+        _errors.city = "Enter a valid city.";
+      }
+      else 
+      {
+        delete _errors.city;
+      }
+    }
+    else if(name === 'state')
+    {
+      if(!regex.NAME_REGEX.test(value))
+      {
+        _errors.state = "Enter a valid state.";
+      }
+      else 
+      {
+        delete _errors.state;
+      }
+    }
+    else if(name === 'country')
+    {
+      if(!regex.NAME_REGEX.test(value))
+      {
+        _errors.country = "Enter a valid country.";
+      }
+      else 
+      {
+        delete _errors.country;
       }
     }
 

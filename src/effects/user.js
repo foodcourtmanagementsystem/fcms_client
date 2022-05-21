@@ -105,7 +105,7 @@ function* workSignInUser(action)
     {
         yield put({
             type: actionTypes.SIGN_IN_USER_ERROR,
-            payload: "Try again!"
+            payload: err.response?.data?.error ?? err.message
         });
     }
 }

@@ -62,6 +62,9 @@ function FoodItem() {
           <div className='food-item-page__title'>
             {foodItem.title}
           </div>
+          <div className='food-item-page__category'>
+            Description : {foodItem.foodCategory.title}
+          </div>
           <div className='food-item-page__price'>
             Price : Rs. {foodItem.price}
           </div>
